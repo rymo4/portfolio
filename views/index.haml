@@ -11,29 +11,37 @@
   .container.main-start
     .row-fluid
       .well.span8.offset2
-        :markdown
-          # Hey!
-          
-          I'm Ryder. I write programs, mostly that run on the web.
+        .row-fluid
+          :plain
+            <pre id='hey' contenteditable='false'>
+                  _  _          _ 
+                 | || |___ _  _| |
+                 | __ / -_) || |_|
+                 |_||_\___|\_, (_)
+                            |__/   
+            </pre>
+        .row-fluid
+          :markdown
+            I'm Ryder. I write programs, mostly that run on the web.
 
-          ### Things I Enjoy:
-          
-          * Ruby
-          * Micro Frameworks
-          * Markdown
-          * RESTful APIs
-          * JSON
-          * DSLs
-          * ~~Fullscreen timelapse videos~~
+            ### Things I Enjoy:
+            
+            * Ruby
+            * Micro Frameworks
+            * Markdown
+            * RESTful APIs
+            * JSON
+            * DSLs
+            * ~~Fullscreen timelapse videos~~
 
-          ### What do these all have in common??
+            ### What do these all have in common??
 
-          Besides being awesome, they are all *clean* and *elagant* solutions to complex problems.
-          They make my life easier by handling the difficult bits, and by allowing me to focus on 
-          the problems I would rather be solving.
+            Besides being awesome, they are all *clean* and *elagant* solutions to complex problems.
+            They make my life easier by handling the difficult bits, and by allowing me to focus on 
+            the problems I would rather be solving.
 
-          Down the road, if you think of me, remeber this:
-          > I will be your micro framework, your RESTful API, and your markdown.
+            Down the road, if you think of me, remeber this:
+            > I will be your micro framework, your RESTful API, and your markdown.
 
 :javascript
   $(document).ready(function(){
