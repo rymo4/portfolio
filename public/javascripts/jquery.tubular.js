@@ -52,7 +52,7 @@ jQuery.fn.tubular = function(videoId,wrapperId) {
 // player calls this function on ready
 function onYouTubePlayerReady(playerId) {
 	ytplayer = document.getElementById("myytplayer");
-	ytplayer.setPlaybackQuality('medium');
+	ytplayer.setPlaybackQuality('high');
 	ytplayer.mute();
 }
 

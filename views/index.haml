@@ -8,6 +8,8 @@
             %a{href: '#'} Blog
           %li
             %a{href: '#'} My Tools
+        .pull-right
+          %button{:id => 'videoPause', :type => "button", :class => "btn", 'data-toggle' => "button"} Video
   .container.main-start
     .row-fluid
       .well.span8.offset2
@@ -35,8 +37,3 @@
 
             Down the road, if you think of me, remeber this:
             > I will be your micro framework, your RESTful API, and your markdown.
-
-:javascript
-  $(document).ready(function(){
-    $('body').tubular('wDmsCJTfTqs','wrapper');
-  });
