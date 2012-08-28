@@ -1,5 +1,6 @@
 (function($){
   jQuery.fn.youtubeFiller = function(videoId, options) {
+
     // Async loading of YT API
     var tag = document.createElement('script');
     tag.src = "//www.youtube.com/iframe_api";
@@ -37,44 +38,46 @@
       
     return this;
   }
-
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        },
-        playerVars:{
-          start: 3,
-          rel: 0
-        }
-    });
-  }
-
-  function onPlayerReady(event) {
-    var yt = event.target;
-    yt.setPlaybackQuality('highres');
-    yt.target.playVideo();
-  }
-
-
-  var done = false;
-  function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-      done = true;
-    }
-  }
-
-  $(document).ready(function(){
-    $('#videoPause').click(function(){
-      $this = $(this);
-      if ($this.hasClass('paused')){
-        player.playVideo();
-      } else {
-        player.pauseVideo();
-      }
-      $(this).toggleClass('paused');
-    });
-  });
 })(jQuery);
+
+var player;
+
+function getPlayer(){ return player; }
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      },
+      playerVars:{
+        start: 3, // why no worky??
+        rel: 0
+      }
+  });
+}
+
+function onPlayerReady(event) {
+  var yt = event.target;
+  yt.setPlaybackQuality('highres');
+  yt.target.playVideo();
+}
+
+var done = false;
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    done = true;
+  }
+}
+
+$(document).ready(function(){
+  $('#videoPause').click(function(){
+    $this = $(this);
+    if ($this.hasClass('paused')){
+      player.playVideo();
+    } else {
+      player.pauseVideo();
+    }
+    $this.toggleClass('paused');
+  });
+});
