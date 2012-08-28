@@ -72,6 +72,7 @@ function onPlayerStateChange(event) {
 
 $(document).ready(function(){
   $('#videoPause').click(function(){
+    $('.icon-pause, .icon-play').toggleClass('icon-pause').toggleClass('icon-play');
     $this = $(this);
     if ($this.hasClass('paused')){
       player.playVideo();
