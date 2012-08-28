@@ -17,7 +17,7 @@
     var duration;
 
     // iframe embedded yt player
-    var iframe = '<iframe id="player" width="' + videoWidth + '" height="' + videoHeight + '" src="http://www.youtube.com/embed/' + videoId + '?autoplay=1&controls=0&modestbranding=1&showinfo=0&version=3&wmode=transparent&loop=1&playlist=' + videoId + '" frameborder="0" allowfullscreen></iframe>';
+    var iframe = '<iframe id="player" width="' + videoWidth + '" height="' + videoHeight + '" src="http://www.youtube.com/embed/' + videoId + '?autoplay=1&controls=0&modestbranding=1&showinfo=0&version=3&wmode=transparent&loop=1&start=10&playlist=' + videoId + '" frameborder="0" allowfullscreen></iframe>';
     
     jQuery('#ytapiplayer').html(iframe);
     
@@ -50,8 +50,7 @@ function onYouTubeIframeAPIReady() {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
       },
-      playerVars:{
-        start: 3, // why no worky??
+      playerVars: {
         rel: 0
       }
   });
@@ -60,7 +59,6 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
   var yt = event.target;
   yt.setPlaybackQuality('highres');
-  yt.target.playVideo();
 }
 
 var done = false;
