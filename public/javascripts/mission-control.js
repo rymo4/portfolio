@@ -1,3 +1,3 @@
 $().ready(function() {
- $('body').tubular('wDmsCJTfTqs');
+ $('body').youtubeFiller('wDmsCJTfTqs');
 });
