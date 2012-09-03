@@ -58,7 +58,7 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
   var yt = event.target;
-  yt.setPlaybackQuality('highres');
+  yt.setPlaybackQuality('medium');
 }
 
 var done = false;

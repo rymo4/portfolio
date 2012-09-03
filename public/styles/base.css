@@ -22,3 +22,7 @@ body { margin: 0; }
 h2, h3 {
    font-weight: 200;
 }
+.coffee > iframe {
+  height: 600px;
+  width: 100%;
+}

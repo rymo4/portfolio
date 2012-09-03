@@ -1,20 +1,22 @@
 .over-video
-  .navbar.navbar-fixed-top
+  .navbar
     .navbar-inner
       .container
         %a.brand{href: '#'} Ryder Moody
         %ul.nav
           %li
-            %a{href: '#'} Blog
+            %a.go2#home{href: '#'} Home
           %li
             %a{href: '#'} My Tools
+          %li
+            %a.go2#coffee{href: '#'} Coffee
         .pull-right
           %button{:id => 'videoPause', :type => "button", :class => "btn", 'data-toggle' => "button"}
             %i.icon-pause
   .container.main-start
     .row-fluid
       .well.span8.offset2
-        .row-fluid
+        .row-fluid.page.home
           :markdown
             # Hey!
             
@@ -28,7 +30,7 @@
             * RESTful APIs
             * JSON
             * DSLs
-            * ~~Fullscreen timelapse videos~~
+            * Fullscreen timelapse videos
 
             ### What do these all have in common??
 
@@ -36,5 +38,13 @@
             They make my life easier by handling the difficult bits, and by allowing me to focus on 
             the problems I would rather be solving.
 
-            Down the road, if you think of me, remeber this:
             > I will be your micro framework, your RESTful API, and your markdown.
+        .row-fluid.page.hide.coffee
+          :markdown
+            ## What's This?
+
+            This is a graph designed in javascript (well, coffeescript) using [d3](d3js.org).
+            It is a mockup for a coffee tasting app that may or may not ever get built.
+            It manipulates SVGs based on data from user rankings (randomly generated for now). Checkout the [jsfiddle](http://jsfiddle.net/rymo4/bQzBd/).
+            Inspired by [33coffees](http://www.33coffees.com/).
+          %iframe{:src => "http://jsfiddle.net/rymo4/bQzBd/show/light/", :allowfullscreen => "allowfullscreen", :frameborder => "0", :style => 'width: 100%; height: 600px;' }
