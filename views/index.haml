@@ -2,17 +2,12 @@
   .navbar
     .navbar-inner
       .container
-        %a.brand{href: '#'} Ryder Moody
-        %ul.nav
-          %li
-            %a.go2#home{href: '#'} Home
-          %li
-            %a{href: '#'} My Tools
-          %li
-            %a.go2#coffee{href: '#'} Coffee
+        %a.brand.go2#home{href: '#'} Ryder Moody
         .pull-right
           %button{:id => 'videoPause', :type => "button", :class => "btn", 'data-toggle' => "button"}
             %i.icon-pause
+          %button{:id => 'videoMute', :type => "button", :class => "btn", 'data-toggle' => "button"}
+            %i.icon-volume-off
   .container.main-start
     .row-fluid
       .well.span8.offset2
@@ -20,25 +15,34 @@
           :markdown
             # Hey!
             
-            I'm Ryder. I write programs, mostly that run on the web.
+            I'm Ryder. I write programs, mostly that run on the web. This site is **under construction**, but I'll tell you a little bit about me in the meantime.
 
-            ### Things I Enjoy:
+            ### Things I Enjoy, Use, and Create
 
             * Ruby
+            * Rails
             * Micro Frameworks
             * Markdown
             * RESTful APIs
-            * JSON
+            * Coffeescript
             * DSLs
             * Fullscreen timelapse videos
 
-            ### What do these all have in common??
+            ### Contact Me
 
-            Besides being awesome, they are all *clean* and *elagant* solutions to complex problems.
-            They make my life easier by handling the difficult bits, and by allowing me to focus on 
-            the problems I would rather be solving.
+            If you want to get a hold of me, shoot me an email at [rlm2155@columbia.edu](mailto:rlm2155@columbia.edu).
 
-            > I will be your micro framework, your RESTful API, and your markdown.
+            ### About This Site
+
+            Written in [Sinatra](sinatrarb.com), [haml](haml.info)/[markdown](http://en.wikipedia.org/wiki/Markdown) and js.
+            I hacked together this background video with some js and and the youtube API.
+            I stuck that pause button up there because it can be annoying and turn on your laptop fans.
+            The video will go away when I have the time to add more content, don't worry.
+
+          %p
+            If you want to see somthing random that I made the other day, click
+            %a.go2#coffee{href: '#'} here.
+
         .row-fluid.page.hide.coffee
           :markdown
             ## What's This?

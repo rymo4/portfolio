@@ -10,9 +10,8 @@
     jQuery('html,body').css('height','100%');
     jQuery('body').prepend('<div id="yt-container" style="overflow: hidden; position: fixed; z-index: 1;"><div id="ytapiplayer">You need Flash player 8+ and JavaScript enabled to view this video.</div></div><div id="video-cover" style="position: fixed; width: 100%; height: 100%; z-index: 2;"></div>');
     
-    // initiailize vars
     var videoWidth = 853; // needed a default value -- this is overwritten almost immediately
-    var videoRatio = 16/9; // either 4/3 or 16/9 -- tweak as needed
+    var videoRatio = 16/9;
     var videoHeight = videoWidth / videoRatio;
     var duration;
 
@@ -35,14 +34,11 @@
       jQuery('#player').width(newWidth).height(newWidth/videoRatio);
     }
     resizePlayer();
-      
     return this;
   }
 })(jQuery);
 
 var player;
-
-function getPlayer(){ return player; }
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
@@ -58,7 +54,7 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
   var yt = event.target;
-  yt.setPlaybackQuality('medium');
+  yt.setPlaybackQuality('hd720');
 }
 
 var done = false;
@@ -78,5 +74,15 @@ $(document).ready(function(){
       player.pauseVideo();
     }
     $this.toggleClass('paused');
+  });
+  $('#videoMute').click(function(){
+    $('.icon-volume-off, .icon-volume-up').toggleClass('icon-volume-off').toggleClass('icon-volume-up');
+    $this = $(this);
+    if ($this.hasClass('muted')){
+      player.setVolume(100);
+    } else {
+      player.mute();
+    }
+    $this.toggleClass('muted');
   });
 });
