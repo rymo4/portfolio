@@ -4,4 +4,8 @@ $(document).ready(function(){
     $('.page').hide();
     $('.' + id).show();
   });
+  
 });
+function fadeIn(obj) {
+  $(obj).fadeIn(7000);
+}

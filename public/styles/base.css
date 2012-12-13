@@ -9,9 +9,7 @@
 
 body { 
   margin: 0; 
-  background: url(/images/space.jpg);
-  background-repeat:no-repeat;
-  background-attachment:fixed;
+  background: #2E3332;
 }
 
 .main-start {
