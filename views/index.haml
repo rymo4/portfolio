@@ -4,26 +4,26 @@
   .navbar
     .navbar-inner
       .container
-        %a.brand.go2#home{href: '#'} Ryder Moody
+        %a.brand{'data-page' => 'home'} Ryder Moody
         %ul.pull-right.nav
           %li
-            %a.go2#coffee{href: '#'} Coffeenated
+            %a{'data-page' => 'coffee'} Coffeenated
           %li
-            %a.go2#civ_net{href: '#'} The Civic Network
+            %a{'data-page' => 'civ_net'} The Civic Network
           %li
-            %a.go2#paperless{href: '#'} Paperless Post
+            %a{'data-page' => 'paperless'} Paperless Post
           %li
             %a{href: 'http://www.github.com/rymo4'} Github
 
   .container.main-start
     .row-fluid
       .well.span10.offset1
-        .row-fluid.page.home
+        .row-fluid.page#home
           :markdown
             # Hey!
-            
+
             I'm Ryder. I write programs, mostly that run on the web. I'll tell you a little bit about myself.
-            
+
             Right now I'm majoring in CS at Columbia, working for [Paperless Post](http://www.paperlesspost.com), and bootstrapping a startup with some friends in [IE@Columbia](http://www8.gsb.columbia.edu/innovation/iehome), a selective Columbia accelerator program. Click the links up above for more info.
 
             ### These Are A Few Of My Favorite Things
@@ -39,7 +39,7 @@
 
             If you want to get a hold of me, shoot me an email at [rlm2155@columbia.edu](mailto:rlm2155@columbia.edu).
 
-        .row-fluid.page.hide.coffee
+        .row-fluid.page.hide#coffee
           :markdown
             ## What's This?
 
@@ -50,7 +50,7 @@
 
             Inspired by [33coffees](http://www.33coffees.com/).
           %iframe{:src => "http://jsfiddle.net/rymo4/bQzBd/show/light/", :allowfullscreen => "allowfullscreen", :frameborder => "0", :style => 'width: 100%; height: 600px;' }
-        .row-fluid.page.hide.civ_net
+        .row-fluid.page.hide#civ_net
           :markdown
             ## The Civic Network
 
@@ -61,7 +61,7 @@
             We want amatuer journalists' work to be seen side by side with large publishers' articles.
             We want readers to have a place to discover and discuss any kind of media relevant to them.
             We think that what you read about defines you, and that your friends are probably interested in discovering your favorite technologies or political views through seeing what you read and what you have to say.
-        .row-fluid.page.hide.paperless
+        .row-fluid.page.hide#paperless
           :markdown
             ## Paperless Post
 
