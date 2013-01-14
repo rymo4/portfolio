@@ -33,24 +33,39 @@ h2, h3 {
 a { text-decoration: underline }
 a.brand { text-decoration: none }
 
-.paperless img { 
-  margin: 0 auto; 
+.paperless img {
+  margin: 0 auto;
   display: block;
 }
 #bg {
-	position:fixed; 
-	top:-50%; 
-	left:-50%; 
-	width:200%; 
-	height:200%;
+  position:fixed;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
 }
 #bg img {
-	position:absolute; 
-	top:0; 
-	left:0; 
-	right:0; 
-	bottom:0; 
-	margin:auto; 
-	min-width:50%;
-	min-height:50%;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
+  min-width:50%;
+  min-height:50%;
+}
+
+.links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  float: left;
+}
+.links li {
+  display: inline;
+  padding: 50px 0 0 0;
+}
+.links h2 {
+  display: inline;
+  margin: 0 20px 0 0;
 }
