@@ -1,4 +1,3 @@
-Portfolio
-=========
+# Portfolio
 
-A work in progress sinatra app that will be my portfolio once it's done. Very early stage.
+A sinatra app that has info about some of my work.
