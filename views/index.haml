@@ -45,9 +45,13 @@
                 - if info[:gh]
                   %li
                     %a{href: github(info) } Github
-                #{', ' if info[:gh] and info[:url]}
+                #{' | ' if info[:gh] and info[:url]}
                 - if info[:url]
                   %li
                     %a{href: info[:url]} URL
+                #{' | ' if info[:url] || info[:gh] and info[:rubygems]}
+                - if info[:rubygems]
+                  %li
+                    %a{href: info[:rubygems]} Rubygems
             .row-fluid
               = partial "_#{page}"

@@ -7,7 +7,7 @@ class App < Sinatra::Base
     @projects = {
       coffee:    { gh: 'rymo4/coffeenated', url: 'http://coffeenated.herokuapp.com', name: 'Coffeenated' },
       paperless: { url: 'http://www.paperlesspost.com', name: 'Paperless Post' },
-      bayesian:  { name: 'Bayesian Average', gh: 'rymo4/bayesian_average' },
+      bayesian:  { name: 'Bayesian Average', gh: 'rymo4/bayesian_average', rubygems: 'https://rubygems.org/gems/bayesian_average' },
       civ_net:   { name: 'The Civic Network' },
       research:  { name: 'Research Match', url: 'http://www.researchmat.ch' },
       linkful:   { name: 'Linkful', gh: 'rymo4/linkful', url: 'http://www.linkful.herokuapp.com' }
