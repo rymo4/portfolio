@@ -11,6 +11,7 @@ class App < Sinatra::Base
     @play = {
       pixel:     { gh: 'rymo4/ColorSpace', url: 'http://pixeladventure.herokuapp.com/', name: 'Pixel Adventure' },
       gunslinger:{ gh: 'rymo4/gunslinger', name: 'Gunslinger' },
+      n_puzzle:  { gh: 'rymo4/N_puzzle', name: 'N Puzzle' },
       coffee:    { gh: 'rymo4/coffeenated', url: 'http://coffeenated.herokuapp.com', name: 'Coffeenated' },
       bayesian:  { name: 'Bayesian Average', gh: 'rymo4/bayesian_average', rubygems: 'https://rubygems.org/gems/bayesian_average' },
       linkful:   { name: 'Linkful', gh: 'rymo4/linkful', url: 'http://linkful.herokuapp.com' }
