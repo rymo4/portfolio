@@ -115,3 +115,7 @@ a.brand { text-decoration: none }
 .dropdown-menu a {
   text-decoration: none;
 }
+
+.bitly-image {
+  float: right;
+}
