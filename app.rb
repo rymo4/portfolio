@@ -1,5 +1,9 @@
 require 'sinatra'
 
+configure :production do
+    require 'newrelic_rpm'
+end
+
 class App < Sinatra::Base
   set :haml, :format => :html5, :layout => :layout
 
