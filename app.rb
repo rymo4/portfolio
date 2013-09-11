@@ -8,13 +8,19 @@ class App < Sinatra::Base
   set :haml, :format => :html5, :layout => :layout
 
   get '/' do
-    @projects = {
+    @play = {
+      pixel:     { gh: 'rymo4/ColorSpace', url: 'http://pixeladventure.herokuapp.com/', name: 'Pixel Adventure' },
+      gunslinger:{ gh: 'rymo4/gunslinger', name: 'Gunslinger' },
+
       coffee:    { gh: 'rymo4/coffeenated', url: 'http://coffeenated.herokuapp.com', name: 'Coffeenated' },
-      paperless: { url: 'http://www.paperlesspost.com', name: 'Paperless Post' },
       bayesian:  { name: 'Bayesian Average', gh: 'rymo4/bayesian_average', rubygems: 'https://rubygems.org/gems/bayesian_average' },
-      civ_net:   { name: 'The Civic Network' },
-      research:  { name: 'Research Match', url: 'http://www.researchmat.ch' },
       linkful:   { name: 'Linkful', gh: 'rymo4/linkful', url: 'http://linkful.herokuapp.com' }
+    }
+    @work = {
+      sprawler:  { name: 'Sprawler (alpha)', url: 'http://sprawler.com' },
+      bitly:     { name: 'Bitly', url: 'http://bit.ly' },
+      paperless: { name: 'Paperless Post', url: 'http://www.paperlesspost.com' },
+      research:  { name: 'Research Match', url: 'http://www.researchmat.ch' }
     }
     haml :index
   end

@@ -5,10 +5,24 @@
     .navbar-inner
       .container
         %a.brand{'data-page' => 'home'} Ryder Moody
-        %ul.pull-right.nav
-          - @projects.each do |page, info|
-            %li
-              %a{'data-page' => page} #{info[:name]}
+        %ul.nav
+          %li.dropdown
+            %a.dropdown-toggle{'id' => 'drop1', 'data-toggle'=>"dropdown", :href => '#'}
+              "Work"
+              %b.caret
+            %ul.dropdown-menu
+              - @work.each do |page, info|
+                %li
+                  %a{:href => '#', 'data-page' => page} #{info[:name]}
+          %li.dropdown
+            %a.dropdown-toggle{'id' => 'drop2', 'data-toggle'=>"dropdown", :href => '#'}
+              Play
+              %b.caret
+            %ul.dropdown-menu
+              - @play.each do |page, info|
+                %li
+                  %a{:href => '#', 'data-page' => page} #{info[:name]}
+          %li
           %li
             %a{href: 'http://www.github.com/rymo4'} Github
 
@@ -19,39 +33,60 @@
           :markdown
             # Hey!
 
-            I'm Ryder. I write programs, mostly that run on the web. I'll tell you a little bit about myself.
+            I'm Ryder. I write programs. I'll tell you a little bit about myself.
 
-            Right now I'm majoring in CS at Columbia, working for [Paperless Post](http://www.paperlesspost.com), and bootstrapping a startup with some friends in [IE@Columbia](http://www8.gsb.columbia.edu/innovation/iehome), a selective Columbia accelerator program. Click the links up above for more info. The code for this site can be found [here](http://github.com/rymo4/portfolio).
+            Right now I'm majoring in CS at Columbia (focusing in artificial intelligence),
+            and bootstrapping a startup, <a data-page="sprawler">Sprawler</a>, with some classmates. We recently
+            finished [IE@Columbia](http://www8.gsb.columbia.edu/innovation/iehome),
+            a selective Columbia accelerator program and currently are alpha testing.
+
+            Click the links up above for more info about what I have done.
+            The code for this site can be found [here](http://github.com/rymo4/portfolio).
 
             ### These Are A Few Of My Favorite Things
 
-            * Ruby & Rails
+            * Ruby & Go
+            * Thinking about self replicating robots
             * CoffeeScript
-            * MongoDB, Postgres & Redis
+            * Machine learning algorithms
             * Vim
-            * HAML
-            * d3, Underscore & Angular
+            * Unix
+            * Distributed systems
+            * AngularJS
+
+            ### Special Sauce
+
+            * Full stack development
+            * AI & ML
+            * Vision & graphics
+
+            ### Requirements
+
+            * Unix
+            * Internet connection
+            * Coffee
 
             ### Contact Me
 
             If you want to get a hold of me, shoot me an email at [rlm2155@columbia.edu](mailto:rlm2155@columbia.edu).
 
-        - @projects.each do |page, info|
-          .page.hide{id: page}
-            .row-fluid
-              %ul.links
-                %li
-                  %h2 #{info[:name]}
-                - if info[:gh]
+        - [@play, @work].each do |set|
+          - set.each do |page, info|
+            .page.hide{id: page}
+              .row-fluid
+                %ul.links
                   %li
-                    %a{href: github(info) } Github
-                #{' | ' if info[:gh] and info[:url]}
-                - if info[:url]
-                  %li
-                    %a{href: info[:url]} URL
-                #{' | ' if info[:url] || info[:gh] and info[:rubygems]}
-                - if info[:rubygems]
-                  %li
-                    %a{href: info[:rubygems]} Rubygems
-            .row-fluid
-              = partial "_#{page}"
+                    %h2 #{info[:name]}
+                  - if info[:gh]
+                    %li
+                      %a{href: github(info) } Github
+                  #{' | ' if info[:gh] and info[:url]}
+                  - if info[:url]
+                    %li
+                      %a{href: info[:url]} URL
+                  #{' | ' if info[:url] || info[:gh] and info[:rubygems]}
+                  - if info[:rubygems]
+                    %li
+                      %a{href: info[:rubygems]} Rubygems
+              .row-fluid
+                = partial "_#{page}"
