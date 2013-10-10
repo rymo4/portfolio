@@ -2,7 +2,7 @@ $(document).ready(function(){
   var track_link = function(type, target){
     if (window.location.href.indexOf('localhost') !== -1){
       console.log("Ignoring track event");
-      //return;
+      return;
     }
     if (type === 'internal'){
       mixpanel.track("view", {type: type, target: target});
