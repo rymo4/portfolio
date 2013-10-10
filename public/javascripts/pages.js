@@ -4,6 +4,7 @@ $(document).ready(function(){
   $link.attr('href', '#')
 
   var go_to = function(page){
+    mixpanel.track("View " + page);
     $('.page').hide();
     $('#' + page).show();
   }
